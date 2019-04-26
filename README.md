@@ -16,8 +16,7 @@
     ```
 
 ## Running Goroute 
-
- - ```
+   ```
    goroute
     -config <Required. Config File Path For Router>
     -env <Optional. Env File Path For Dynamic Router Values>
@@ -26,7 +25,8 @@
 
 ## Important Points
 
-# Providing dynamic environment values
+### Providing dynamic environment values
   - Provide values enwrapped with $ at both start and end. Ex - $namespace$
   - Provide environment variable name for value in environment config file. Ex - "namespace" : "ODP_NAMESPACE"
+  - Sample config and enviroment files are present in repo. 
 
