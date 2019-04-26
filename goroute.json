@@ -1,0 +1,34 @@
+{
+    "host" : "0.0.0.0",
+    "port" : "8888",
+    "security" : {
+        "enabled" : false,
+        "certPath" : "",
+        "keyPath" : "",
+        "minTLSVersion" : "",
+        "maxTLSVersion" : ""
+    },
+    "caching" : {
+        "enabled" : true,
+        "endpoint" : "0.0.0.0:11211"
+    },
+    "routes" : [
+        {
+            "path" : "/api",
+            "headers" : {
+                "Server" : "ODP"
+            },
+            "target" : "http://gw.$namespace$/test",
+            "targetType" : "URL"
+        },
+        {
+            "path" : "/author",
+            "headers" : {
+                "Server" : "ODP"
+            },
+            "target" : "C:\\Users\\Lakshay\\Desktop\\WORK\\odp-b2b-agent\\",
+            "targetType" : "STATIC",
+            "cacheExpiry" : 10
+        }
+    ]
+}
