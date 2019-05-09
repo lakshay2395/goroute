@@ -16,7 +16,12 @@
         {
             "path" : "/api",
             "headers" : {
-                "Server" : "ODP"
+                "request" : {
+                    "Server" : "ODP"
+                },
+                "response" : {
+                    "Server" : "ODP"
+                }
             },
             "target" : "http://gw.$namespace$/test",
             "targetType" : "URL"

@@ -20,11 +20,17 @@ type Security struct {
 
 //Route - struct for routing details
 type Route struct {
-	Path        string            `json:"path"`
-	Headers     map[string]string `json:"headers"`
-	Target      string            `json:"target"`
-	TargetType  string            `json:"targetType"`
-	CacheExpiry int32             `json:"cacheExpiry"`
+	Path        string  `json:"path"`
+	Headers     Headers `json:"headers"`
+	Target      string  `json:"target"`
+	TargetType  string  `json:"targetType"`
+	CacheExpiry int32   `json:"cacheExpiry"`
+}
+
+//Headers - struct for headers
+type Headers struct {
+	Request  map[string]string `json:"request"`
+	Response map[string]string `json:"response"`
 }
 
 //Cache - struct for caching details

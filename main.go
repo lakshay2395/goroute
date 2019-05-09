@@ -77,7 +77,7 @@ func StartRouter(config Config) error {
 						http.NotFound(w, req)
 					} else {
 						headers := temp.Headers
-						for k, v := range headers {
+						for k, v := range headers.Request {
 							req.Header.Add(k, v)
 						}
 						url, _ := url.Parse(temp.Target)
@@ -88,6 +88,9 @@ func StartRouter(config Config) error {
 						req.Header.Set("X-Forwarded-Host", req.Header.Get("Host"))
 						req.Host = url.Host
 						proxy.ServeHTTP(w, req)
+						for k, v := range headers.Response {
+							w.Header().Add(k, v)
+						}
 					}
 				})
 			}(route)
