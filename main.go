@@ -87,10 +87,10 @@ func StartRouter(config Config) error {
 						req.URL.Path = req.URL.Path[len(route.Path):len(req.URL.Path)]
 						req.Header.Set("X-Forwarded-Host", req.Header.Get("Host"))
 						req.Host = url.Host
-						proxy.ServeHTTP(w, req)
 						for k, v := range headers.Response {
 							w.Header().Add(k, v)
 						}
+						proxy.ServeHTTP(w, req)
 					}
 				})
 			}(route)
